@@ -5,8 +5,8 @@ My terminal setup: [Ghostty](https://ghostty.org) config and a Claude Code statu
 ## Install
 
 ```bash
-git clone <this repo> ~/Documents/personal/dotfiles
-~/Documents/personal/dotfiles/install.sh
+git clone <this repo> ~/Documents/Codebase/Personal/dotfiles
+~/Documents/Codebase/Personal/dotfiles/install.sh
 ```
 
 `install.sh` symlinks each file into place, so editing a file here changes the live
