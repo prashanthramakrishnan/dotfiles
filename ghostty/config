@@ -1,0 +1,60 @@
+# Ghostty configuration
+# Reference: ghostty +show-config --default --docs
+# Reload after editing: Cmd+Shift+, (or open a new window)
+
+# Catppuccin Mocha -- soft, low-glare dark palette with a full, well-balanced
+# 16-colour ANSI set, so coloured CLI output (git, eza, the Claude Code status
+# line) stays legible instead of vibrating against the background.
+theme = Catppuccin Mocha
+
+# A little breathing room around the text grid.
+window-padding-x = 10
+window-padding-y = 8
+window-padding-balance = true
+
+# Cursor: blinking bar is easier to spot after a long scroll.
+cursor-style = bar
+cursor-style-blink = true
+
+# Generous scrollback for long build logs (bytes; ~100 MB).
+scrollback-limit = 104857600
+
+# --- optional extras: uncomment to taste -------------------------------------
+
+# Follow the system appearance, switching to the light Catppuccin sibling.
+# Replaces the `theme` line above.
+# theme = dark:Catppuccin Mocha,light:Catppuccin Latte
+
+# Slight transparency + background blur (macOS only). Costs some contrast.
+# background-opacity = 0.95
+# background-blur-radius = 20
+
+# Treat Option as Alt, so Alt+b / Alt+f word-motions work in shells and vim.
+# Breaks Option-based accented characters.
+# macos-option-as-alt = true
+
+# A font with programming ligatures, once installed:
+#   brew install --cask font-jetbrains-mono
+font-family = JetBrains Mono
+font-size = 14
+
+# --- paste: make Cmd+V work for images in Claude Code -----------------------
+# Ghostty's own Cmd+V pastes the clipboard as *text*, which silently drops
+# image data. Claude Code instead reads the system clipboard itself when it
+# receives Ctrl+V (0x16), which is how screenshots get attached. Sending 0x16
+# on Cmd+V lets the familiar shortcut attach images.
+#
+# Trade-off: Cmd+V no longer pastes text into other programs -- in a shell,
+# Ctrl+V is readline's quoted-insert, and in vim's insert mode it inserts a
+# literal character. Real text paste moves to Cmd+Shift+V.
+keybind = cmd+v=text:\x16
+keybind = cmd+shift+v=paste_from_clipboard
+
+# --- split resizing: conflict-free alternative -------------------------------
+# The default Cmd+Ctrl+Arrow resize is often swallowed by window managers
+# (Rectangle, Raycast, ...). Adding Shift gives a combo they rarely claim.
+# The defaults stay bound too. The number is pixels per keypress.
+keybind = cmd+ctrl+shift+up=resize_split:up,20
+keybind = cmd+ctrl+shift+down=resize_split:down,20
+keybind = cmd+ctrl+shift+left=resize_split:left,20
+keybind = cmd+ctrl+shift+right=resize_split:right,20

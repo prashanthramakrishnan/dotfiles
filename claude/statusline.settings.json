@@ -1,0 +1,8 @@
+{
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline-limits.sh",
+    "padding": 0,
+    "refreshInterval": 60
+  }
+}
