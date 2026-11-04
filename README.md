@@ -24,10 +24,16 @@ brew install jq                           # the status line parses JSON with it
 
 ### `ghostty/config` → `~/.config/ghostty/config`
 
-- Catppuccin Mocha theme, JetBrains Mono 14, a little window padding, blinking bar cursor
+- Catppuccin theme that follows the system appearance (Mocha in dark mode, Latte in
+  light mode), JetBrains Mono 14, a little window padding, blinking bar cursor
 - ~100 MB scrollback for long logs
+- `Cmd+§` from any app opens and closes the quick terminal, a terminal that slides down
+  from the top of the screen (macOS asks for Accessibility permission the first time)
+- `Cmd+Option+Arrow` moves between splits; splits you are not typing in are dimmed
 - `Cmd+Ctrl+Shift+Arrow` resizes splits by 20 px (the default `Cmd+Ctrl+Arrow` is often
   taken by window managers like Rectangle or Raycast)
+- Selecting text copies it, the mouse pointer hides while you type, windows and tabs
+  reopen after quitting, and tabs sit in the titlebar
 
 > **Heads-up: Cmd+V is changed.** It sends Ctrl+V so screenshots paste into Claude Code.
 > Plain text paste moves to **Cmd+Shift+V**. Delete the two `keybind = cmd+v` /
